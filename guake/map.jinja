@@ -4,7 +4,7 @@
     },
 }, merge=salt['pillar.get']('guake:lookup')) %}
 
-{% set guake-indicator = salt['grains.filter_by']({
+{% set indicator = salt['grains.filter_by']({
     'default': {
         'pkg': 'guake-indicator',
         'ppa': 'gun101/ppa'

@@ -1,10 +1,10 @@
-{% from "guake/map.jinja" import guake-indicator with context %}
+{% from "guake/map.jinja" import indicator with context %}
 
 indicator:
   pkg:
     - installed
-    - name: {{ guake-indicator.pkg }}
-    {% if guake-indicator.ppa %}
+    - name: {{ indicator.pkg }}
+    {% if indicator.ppa is defined %}
     - pkgrepo.managed:
-      - ppa: {{ guake-indicator.ppa }}
+      - ppa: {{ indicator.ppa }}
     {% endif %}
