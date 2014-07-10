@@ -4,3 +4,7 @@ indicator:
   pkg:
     - installed
     - name: {{ guake-indicator.pkg }}
+    {% if guake-indicator.ppa %}
+    - pkgrepo.managed:
+      - ppa: {{ guake-indicator.ppa }}
+    {% endif %}
