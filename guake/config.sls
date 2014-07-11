@@ -7,5 +7,6 @@ guake-keybindings:
     - mode: 774
     - template: jinja
     - source: salt://guake/templates/guake-keybindings.xml.jinja
+    - keybindings: {{ salt['pillar.get']('guake-config:keybindings:' ~ user, {}) }}
   {% endfor %}
   
