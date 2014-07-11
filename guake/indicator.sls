@@ -1,9 +1,9 @@
 {% from "guake/map.jinja" import indicator with context %}
 
-indicator:
+guake-indicator:
   pkg:
     - installed
-    - name: {{ indicator.pkg }}
+    - name: {{ guake-indicator.pkg }}
     {% if indicator.ppa is defined %}
     - pkgrepo.managed:
       - ppa: {{ indicator.ppa }}
@@ -18,7 +18,7 @@ indicator:
     - template: jinja
     - source: salt://guake/templates/guake-indicator.json.jinja
     - require:
-      - pkg: indicator
+      - pkg: guake-indicator
   {% endif %}
   {% endfor %}
   
