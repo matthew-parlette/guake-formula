@@ -1,0 +1,12 @@
+{% set guake = salt['grains.filter_by']({
+    'default': {
+        'pkg': 'guake',
+    },
+}, merge=salt['pillar.get']('guake:lookup')) %}
+
+{% set indicator = salt['grains.filter_by']({
+    'default': {
+        'pkg': 'guake-indicator',
+        'ppa': 'gun101/ppa',
+    },
+}, merge=salt['pillar.get']('guake-indicator:lookup')) %}

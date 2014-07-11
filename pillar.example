@@ -1,3 +1,33 @@
-template:
+guake-indicator:
   lookup:
-    master: template-master
+    ppa: gun101/ppa
+  users:
+    - matt
+  menu:
+    data:
+      - hostname: 127.0.0.1
+        login: matt
+        menu_name: byobu on localhost
+        tab_name: "local"
+        command_after_login: byobu
+        remote_command: "no"
+        x_forwarded: "no"
+        dont_show_guake: "no"
+    dropdown:
+      data:
+        - hostname: host-ip
+          login: matt
+          menu_name: host-name
+          tab_name: "host"
+          command_after_login: ""
+          remote_command: "no"
+          x_forwarded: "no"
+          dont_show_guake: "no"
+
+guake-config:
+  keybindings:
+    matt:
+      new_tab: '&lt;Primary&gt;F2'
+      next_tab: '&lt;Primary&gt;F4'
+      previous_tab: '&lt;Primary&gt;F3'
+      rename_tab: '&lt;Primary&gt;F8'

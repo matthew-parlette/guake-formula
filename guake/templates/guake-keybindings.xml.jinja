@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<gconf>
+	{% for key,binding in keybindings.items() %}
+	<entry name="{{ key }}" mtime="1405083039" type="string">
+		<stringvalue>{{ binding }}</stringvalue>
+	</entry>
+	{% endfor %}
+</gconf>
