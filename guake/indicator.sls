@@ -3,13 +3,14 @@
 guake-indicator:
   pkg:
     - installed
-    - name: {{ guake-indicator.pkg }}
+    - name: {{ indicator.pkg }}
     {% if indicator.ppa is defined %}
     - pkgrepo.managed:
       - ppa: {{ indicator.ppa }}
     {% endif %}
-  {% for user in pillar.get('guake-indicator',{}) %}
-  {% if user != "common" %}
+
+{% for user in pillar.get('guake-indicator',{}).get('users',[]) %}
+guake-indicator-{{ user }}:
   file.managed:
     - name: /home/{{ user }}/.guake-indicator/guake-indicator.json
     - user: {{ user }}
@@ -19,6 +20,5 @@ guake-indicator:
     - source: salt://guake/templates/guake-indicator.json.jinja
     - require:
       - pkg: guake-indicator
-  {% endif %}
-  {% endfor %}
+{% endfor %}
   
