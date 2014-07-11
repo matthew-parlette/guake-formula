@@ -1,6 +1,6 @@
 template formula
 ================
 
-0.0.1 (2013-11-03)
+1.0.0 (2014-07-11)
 
 - Initial version
