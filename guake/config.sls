@@ -9,4 +9,3 @@ guake-keybindings:
     - source: salt://guake/templates/guake-keybindings.xml.jinja
     - keybindings: {{ salt['pillar.get']('guake-config:keybindings:' ~ user, {}) }}
   {% endfor %}
-  
