@@ -12,12 +12,13 @@ indicator:
   {% if user != "common" %}
   file.managed:
     - name: /home/{{ user }}/.guake-indicator/guake-indicator.json
-    - template: jinja
     - user: {{ user }}
     - group: {{ user }}
     - mode: 774
-    - source: salt.output.json_out.output({"data":[]})
+    - template: jinja
+    - source: salt://guake/templates/guake-indicator.json.jinja
     - require:
       - pkg: indicator
   {% endif %}
   {% endfor %}
+  
