@@ -18,6 +18,8 @@ guake-indicator-{{ user }}:
     - mode: 774
     - template: jinja
     - source: salt://guake/templates/guake-indicator.json.jinja
+    - defaults:
+        user: {{ user }}
     - require:
       - pkg: guake-indicator
 {% endfor %}
